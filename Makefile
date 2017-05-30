@@ -6,6 +6,7 @@ all: build
 
 build: Dockerfile
 	$(DOCKER) build -t $(IMAGE):$(TAG) .
+	$(DOCKER) tag $(IMAGE):$(TAG) $(IMAGE):latest
 
 clean:
 	$(DOCKER) rmi $(IMAGE):$(TAG)
